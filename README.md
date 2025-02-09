@@ -2,8 +2,8 @@
 In this repository, I have covered all the basic concepts of OOP using examples
 ## Virtual & Pure Virtual functions
 <b>//Header file</b>  
-#include<iostream>  
-#include<iomanip>  
+#include"iostream"  
+#include"iomanip"  
 using namespace std;  
 class base {  
 protected:  
@@ -81,11 +81,12 @@ delete b;*/
 system("pause");  
 return 0;  
 }  
+![Output of Virtual functions](C:\Users\dell\Desktop\output\pic1)  
 
 ## Virtual Classes
-<br><b>//Header file</b>
-<br>#include<iostream>
-<br>#include<iomanip>
+<b>//Header file</b>
+<br>#include"iostream"
+<br>#include"iomanip"
 <br>using namespace std;
 <br>class base {
 <br>public:
