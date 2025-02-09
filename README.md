@@ -861,3 +861,348 @@ vvoid read();
 <br>system("pause");
 <br>return 0;
 <br>}
+
+## Exeption Handling
+<b>//header file</b>
+<br>#include"iostream"
+<br>#include"string"
+<br>using namespace std;
+<br>class base {
+<br>private:
+<br>int age;
+<br>public:
+<br>base(int a) {
+<br>age = a;
+<br>}
+<br>void check() {
+<br>if (age < 17) {
+<br>throw ("Don't display website dashboard.");
+<br>}
+<br>cout << "\nDisplay dashboard";
+<br>}
+<br>};
+<br><br><b>//Main file</b>
+<br>#include"Header.h"
+<br>int main() {
+<br>base b(13);
+<br>try {
+<br>b.check();
+<br>}
+<br>catch(const char* statement){
+<br>cout << statement;
+<br>}
+<br>cout << endl;
+<br>system("pause");
+<br>return 0;
+<br>}
+
+## Dynamic Memory Allocation(for object)
+<b>//header file</b>
+<br>#include"iostream"
+<br>using namespace std;
+<br>class User {
+<br>private:
+<br>int a=2, b=3, c;
+<br>public:
+<br>void sum() {
+<br>c = a + b;
+<br>}
+<br>void display() {
+<br>cout << "\nSum=" << c<<endl;
+<br>}
+<br>};
+<br><br><b>//Main file</b>
+<br>#include"Header.h"
+<br>int main() {
+<br>User* u = new User; //int* i=new int;
+<br>u->sum();
+<br>u->display();
+<br>delete u;
+<br>system("pause");
+<br>return 0;
+<br>}
+
+### Simple C++ Concepts
+
+## Dynamic Memory Allocation(for variables)
+<br>#include"iostream"
+<br>#include"string"
+<br>using namespace std;
+<br>int main() {
+<br>int size = 3;
+<br>//for single variable
+<br>string* name = new string;
+<br>cout << "\nEnter your name: ";
+<br>getline(cin, *name);
+<br>cout << "\nYour Name: " << *name;
+<br>cout << "\n***************************\n";
+<br>cout << endl;
+<br>//for array 
+<br>string* names=new string[size];
+<br>for (int i = 0;i < size;i++)
+<br>{
+<br>cout << "Enter the name of student " << i + 1 << ": ";
+<br>getline(cin, *(names + i));
+<br>cout << endl << endl;;
+<br>}
+<br>for (int i = 0;i < size;i++)
+<br>{
+<br>cout << "Name of student " << i + 1 << ": "<<*(names + i);
+<br>cout << endl;
+<br>}
+<br>delete name;
+<br>delete[] names;
+<br>system("pause");
+<br>return 0;
+<br>}
+
+ ## Passing dynamic array to function:
+<br>#include"iostream"
+<br>#include"string"
+<br>using namespace std;
+<br>void call(string* names, int size);
+<br>int main() {
+<br>int size = 3;
+<br>string* names=new string[size];
+<br>for (int i = 0;i < size;i++)
+<br>{
+<br>cout << "Enter the name of student " << i + 1 << ": ";
+<br>getline(cin, *(names + i));
+<br>cout << endl;
+<br>}
+<br>cout << endl;
+<br>call(names,size);
+<br>delete[] names;
+<br>system("pause");
+<br>return 0;
+<br>}
+<br>void call(string *names,int size)
+<br>{
+<br>for (int i = 0;i < size;i++)
+<br>{
+<br>cout << "Name of student " << i + 1 << ": " << *(names + i);
+<br>cout << endl;
+<br>}
+<br>return;
+<br>}
+
+## Passing static array to function(method 1)
+<br>#include"iostream"
+<br>#include"string"
+<br>using namespace std;
+<br>void call(string* name, int size);
+<br>int main() {
+<br>int size = 3;
+<br>string name[3];
+<br>for (int i = 0;i < 3;i++)
+<br>{
+<br>cout << "Enter the name of student " << i + 1 << ": ";
+<br>getline(cin, name[i]);
+<br>cout << endl;
+<br>}
+<br>cout << endl;
+<br>call(name,size);
+<br>system("pause");
+<br>return 0;
+<br>}
+<br>void call(string *name,int size)
+<br>{
+<br>for (int i = 0;i < size;i++)
+<br>{
+<br>cout << "Name of student " << i + 1 << ": " << name[i];
+<br>cout << endl;
+<br>//OR 
+<br>/*for (int i = 0;i < size;i++)
+<br>{
+<br>cout << "Name of student " << i + 1 << ": " << *(name + i);
+<br>cout << endl;
+<br> }*/
+<br>return;
+<br>}
+
+## Passing static array to function(method 2)
+<br>#include"iostream"
+<br>#include"string"
+<br>using namespace std;
+<br>void call(string*, int);
+<br>int main() {
+<br>int size = 3;
+<br>string name[3];
+<br>for (int i = 0;i < 3;i++)
+<br>{
+<br>cout << "Enter the name of student " << i + 1 << ": ";
+<br>getline(cin, name[i]);
+<br>cout << endl;
+<br>}
+<br>cout << endl;
+<br>call(name, size);
+<br>system("pause");
+<br>return 0;
+<br>}
+<br>void call(string n[], int s)
+<br>{
+<br>for (int i = 0;i < s;i++)
+<br>{
+<br>cout << "Name of student " << i + 1 << ": " << n[i];
+<br>cout << endl;
+<br>}
+<br>return;
+<br>}
+
+## Functions returning pointer
+<br>#include"iostream"
+<br>using namespace std;
+<br>int* sum(int&, int&);
+<br>int main() {
+<br>int a=3, b=4;
+<br>int* c;
+<br>c = sum(a, b);
+<br>cout << "sum=" << *c<<endl;
+<br>system("pause");
+<br>return 0;
+<br>}
+<br>int* sum(int& a, int& b)
+<br>{
+<br>static int x = a + b;
+<br>//can only use static or new operator for x as it is declared locally when compiler comes out of function it destroyes full function including x variable 
+<br>return (&x);
+<br>}
+
+## Pointers storing another pointer
+<br>#include"iostream"
+<br>#include"iomanip"
+<br>using namespace std;
+<br>int main() {
+<br>int b = 4;
+<br>int* p1 = &b;
+<br>int** p2 = &p1;
+<br>cout << left;
+<br>cout << setw(7) << "b"<< setw(30) << b;
+<br>cout << endl;
+<br>cout << setw(7) << "&b" <<setw(30)<< & b;
+<br>cout << endl;
+<br>cout << setw(7) << "p1" << setw(30) << p1;
+<br>cout << endl;
+<br>cout << setw(7) << "*p1" << setw(30) << *p1;
+<br>cout << endl;
+<br>cout << setw(7) << "&p1" << setw(30) << &p1;
+<br>cout << endl;
+<br>cout << setw(7) << "p2" << setw(30) << p2;
+<br>cout << endl;
+<br>cout << setw(7) << "*p2" << setw(30) << *p2;
+<br>cout << endl;
+<br>cout << setw(7) << "**p2" << setw(30) << **p2;
+<br>cout << endl;
+<br>cout << setw(7) << "&p2" << setw(30) << &p2;
+<br>cout << endl;
+<br>system("pause");
+<br>return 0;
+<br>}
+
+## String Functions
+<br>#include"iostream"
+<br>#include"iomanip"
+<br>#include"string"
+<br>#include"cstring"
+<br>using namespace std;
+<br>int main() {
+<br>//for both string and character array
+<br>string s1, s2, s3;
+<br>s1 = "Alishba";
+<br>s2 = "Saboor";
+<br>char ch1[20] = { 'M','a','r','i','a','\0'};
+<br>char ch2[20] = { 'H','a','f','e','e','z','\0'};
+<br>//finding character in character array
+<br>char* ptr1 = strchr(ch1, 'i');
+<br>if (ptr1) {
+<br>cout << "Character found at: " << ptr1 - ch1;
+<br>//subtracts the addresses to get location of a specific characters
+<br>}
+<br>//finding character in string
+<br>int pos1 = s1.find('b'); //better to use size_t data type instead of int 
+<br>if (pos1 != string::npos) //pos1(valid position). npos(invalid position)
+<br>{
+<br>cout << "\nCharacter found at: " << pos1;
+<br>}
+<br>cout << endl;
+<br>//length of string 
+<br>cout << "\nLength of character array (Maria): " << strlen(ch1);
+<br>//length of character array
+<br>cout << "\nLength of string (Alishba): " << s1.length();
+<br>cout << endl;
+<br>//compare strings for character arrays
+<br>int result=strcmp(ch1, ch2);
+<br>if (result == 0) {
+<br>cout << "Both are Equal.";
+<br>}
+<br>else if (result == -1) {
+<br>cout << "\nMaria is less than Hafeez.";
+<br>}
+<br>else if (result == 1) {
+<br>cout << "\nMaria is greater than Hafeez.";
+<br>}
+<br>//compare strings for string
+<br>if (s1 == s2) {
+<br>cout << "Both are Equal.";
+<br>}
+<br>else if (s1< s2) {
+<br>cout << "\nAlishba is less than Saboor.";
+<br>}
+<br>else if (s1>s2) {
+<br>cout << "\nAlishba is greater than Saboor.";
+<br>}
+<br>cout << endl;
+<br>//concatenation for character arrays
+<br>strcat_s(ch1, ch2); //strcat can also be used but thats used for old versions 
+<br>cout<<"\nConcatenation of character array: "<<ch1;
+<br>//concatenation for strings
+<br>s3 = s1 + s2;
+<br>cout << "\nConcatenation of string: " << s3;
+<br>cout << endl;
+<br>//copying of character arrays
+<br>strcpy_s(ch1, ch2);
+<br>cout << "\nAfter copying 2nd name to 1st name: " << ch1;
+<br>//copying of strings
+<br>s1 = s2;
+<br>cout << "\nAfter copying 2nd name to 1st name: " << s1;
+<br>cout << endl;
+<br>//finding substring in string
+<br>char extra1[20] = { 'M','a','r','i','a',' ','H','a','f','e','e','z' };
+<br>char* ptr2 = strstr(extra1, "Hafeez");
+<br>if (ptr2) {
+<br>cout << "\nSubstring found at: " << ptr2 - extra1;
+<br>}
+<br>//finding substring in character arrays
+<br>string extra2 = "Alishba Saboor";
+<br>int pos2 = extra2.find("Saboor");
+<br>if (pos2 != string::npos) {
+<br>cout << "\nSubstring found at: " << pos2;
+<br>}
+<br>cout << endl<<endl;
+<br>system("pause");
+<br>return 0;
+<br>}
+
+## Find & Replace functions in string
+<br>#include"iostream"
+<br>#include"iomanip"
+<br>#include"string"
+<br>#include"cstring"
+<br>using namespace std;
+<br>int main() {
+<br>string name = "Object Oriented Paradigm";
+<br>string n = "Paradigm";
+<br>cout << "\n****Before modification****";
+<br>cout << "\nString: " << name<<endl;
+<br>int pos = name.find(n);//name.find finds the index/address of string
+<br>if (pos != string::npos) { //npos functions tells if no match found of your string
+<br>cout << "\nParadigm found at position: " << pos<<endl;
+<br>}
+<br>name.replace(pos, n.length(), "Programming"); 
+<br>//syntax: variable.replace(starting position, length of word, the word to be replaced with)
+<br>cout << "\n****After replacing Paradigm with Programming****";
+<br>cout << "\nString: " << name;
+<br>cout << endl<<endl;
+<br>system("pause");
+<br>return 0;
+<br>}
