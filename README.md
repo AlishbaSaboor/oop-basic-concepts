@@ -1,5 +1,19 @@
 # OOP-Basic-Concepts
-In this repository, I have covered all the basic concepts of OOP using examples
+In this repository, I have covered all the basic concepts of OOP using examples. The basic concepts of OOP include:
+- Virtual & Pure Virtual functons(Abstract Classes)
+- Virtual Classes
+- Friend Functions & Classes
+- Operator Overloading
+- Aggregation & Composition
+- Templates for variables & arrays
+- Static members & functions
+- This pointer (this->)
+- Insertion & Extraction overloading (with & without file handling, by calling base from derived class different method)
+- File Handling
+- Exeption Handling
+- Dynamic Memory Allocation for objects
+- Basic C++ concepts (Dynamic memory allocation for variables, Passing dynamic array to function, Passing static array to function, Functions returning pointer, Pointers storing another pointers, String Functions)
+---
 ## Virtual & Pure Virtual functions
 <b>//Header file</b>  
 #include"iostream"  
@@ -922,7 +936,7 @@ vvoid read();
 <br>return 0;
 <br>}
 
-### Simple C++ Concepts
+# Simple C++ Concepts
 
 ## Dynamic Memory Allocation(for variables)
 <br>#include"iostream"
