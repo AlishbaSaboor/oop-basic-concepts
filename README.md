@@ -81,3 +81,51 @@ delete b;*/
 system("pause");  
 return 0;  
 }  
+
+## Virtual Classes
+<br><b>//Header file</b>
+<br>#include<iostream>
+<br>#include<iomanip>
+<br>using namespace std;
+<br>class base {
+<br>public:
+<br>void displayBase();
+<br>};
+<br>//used virtual class so that base class can be accessed through last class obj
+<br>class derived1 :virtual public base {
+<br>public:
+<br>void displayDerived1();
+<br>};
+<br>class derived2 : virtual public base {
+<br>public:
+<br>void displayDerived2();
+<br>};
+<br> last : public derived1, public derived2 {
+<br>:
+<br>void displayLast();
+<br>};
+<br><br><b>//Function file</b>
+<br>#include"Header.h"
+<br>void base::displayBase() {
+<br>cout << "\nBase class";
+<br>}
+<br>void derived1::displayDerived1() {
+<br>cout << "\nderived class 1";
+<br>}
+<br>void derived2::displayDerived2() {
+<br>cout << "\nderived class 2";
+<br>}
+<br>void last::displayLast() {
+<br>cout << "\nlast class"<<endl;
+<br>}
+<br><br><b>//main file</b>
+<br>#include"Header.h"
+<br>int main() {
+<br>last l;
+<br>l.displayBase();
+<br>l.displayDerived1();
+<br>l.displayDerived2();
+<br>l.displayLast();
+<br>system("pause");
+<br>return 0;
+<br>}
