@@ -23,4 +23,3 @@ class last : public derived1, public derived2
 {
 void displayLast();
 };
-```cpp
