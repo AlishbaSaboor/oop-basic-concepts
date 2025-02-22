@@ -53,7 +53,7 @@ Encapsulation → The engine is hidden inside the hood (private data).
 Inheritance → A sports car inherits features from a general car.  
 Polymorphism → A "drive" function works differently for a manual and automatic car.  
 
-<h4>Note:</h4> 
+<h2>Note:</h2> 
 
 **For a deeper understanding, explore the Examples folder, where you’ll find practical implementations of these OOP concepts with detailed comments. These examples will help reinforce the theory covered in this repository.**
 
