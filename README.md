@@ -51,7 +51,7 @@ int main() {
 }
 ```
 
-**Real-world Analogy:**
+**Real-world Analogy:**  
 Think of OOP as a car factory:  
 Class → The blueprint of a car.  
 Object → A specific car made from the blueprint.  
@@ -59,47 +59,29 @@ Encapsulation → The engine is hidden inside the hood (private data).
 Inheritance → A sports car inherits features from a general car.  
 Polymorphism → A "drive" function works differently for a manual and automatic car.  
 
-The basic concepts of OOP covered are follow as:
-- Virtual & Pure Virtual functons(Abstract Classes)
-- Virtual Classes
-- Friend Functions & Classes
-- Operator Overloading
-- Aggregation & Composition
-- Templates for variables & arrays
-- Static members & functions
-- This pointer (this->)
-- Insertion & Extraction overloading (with & without file handling, by calling base from derived class different method)
-- File Handling
-- Exeption Handling
-- Dynamic Memory Allocation for objects
-- Basic C++ concepts (Dynamic memory allocation for variables, Passing dynamic array to function, Passing static array to function, Functions returning pointer, Pointers storing another pointers, String Functions)
----
 ## Virtual & Pure Virtual functions
-Virtual Functions:
+<h3>>Virtual Functions:</h3> 
+A virtual function is a function in a base class that you can override in a derived class. When calling a virtual function through a base class pointer, the derived class version is executed.  
 
-A virtual function is a function in a base class that you can override in a derived class. When calling a virtual function through a base class pointer, the derived class version is executed.
-
-Key Points:
-
-Declared using the virtual keyword in the base class.
-
-Ensures correct function execution in an inheritance hierarchy.
-
-Enables runtime polymorphism.
-
-Syntax:
-
+**Key Points:**  
+- Declared using the virtual keyword in the base class.
+- Ensures correct function execution in an inheritance hierarchy.
+- Enables runtime polymorphism.  
+**Syntax:**
+```cpp
 virtual void print();
+```
 
-Pure Virtual Functions:
+<h3>Pure Virtual Functions:</h3>
+A pure virtual function is a function that has no implementation in the base class and must be overridden in derived classes. A class with at least one pure virtual function is called an abstract class.  
 
-A pure virtual function is a function that has no implementation in the base class and must be overridden in derived classes. A class with at least one pure virtual function is called an abstract class.
-
-Syntax:
-
+**Syntax:**
+```cpp
 virtual void show() = 0; // Pure virtual function
+```
 
-Real-world example: Think of a "Shape" class where different shapes (circle, square, triangle) must define their own way of calculating area.
+**Real-world example:**  
+Think of a "Shape" class where different shapes (circle, square, triangle) must define their own way of calculating area.
 
 ## Virtual Classes
 A virtual base class is used to prevent duplicate instances of a base class when using multiple inheritances.
