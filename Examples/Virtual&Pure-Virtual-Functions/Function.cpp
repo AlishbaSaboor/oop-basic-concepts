@@ -1,4 +1,3 @@
-```cpp
 #include"Header.h"  
 base::base() 
 {  

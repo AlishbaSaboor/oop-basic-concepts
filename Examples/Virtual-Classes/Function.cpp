@@ -1,5 +1,3 @@
-```cpp
-
 #include"Header.h"
 void base::displayBase() 
 {
