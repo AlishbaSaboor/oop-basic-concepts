@@ -5,15 +5,19 @@ Object-Oriented Programming (OOP) is a programming paradigm that uses objects to
 **Encapsulation:**  
 - Bundling data and functions inside a class.
 - Protects data using private and public access specifiers.
+
 **Abstraction:**  
 - Hiding unnecessary implementation details from the user.
 - Implemented using access modifiers (public, private, protected).
+
 **Inheritance:**
 - A mechanism where one class acquires properties of another.
 - Allows code reusability (class Derived : public Base).
+
 **Polymorphism:**  
 - Ability to take multiple forms.
 - Achieved through function overloading, operator overloading, and virtual functions.
+
 **Classes & Objects:**  
 - Class: A blueprint for creating objects.
 - Object: An instance of a class.
@@ -48,12 +52,12 @@ int main() {
 ```
 
 **Real-world Analogy:**
-Think of OOP as a car factory:
-Class → The blueprint of a car.
-Object → A specific car made from the blueprint.
-Encapsulation → The engine is hidden inside the hood (private data).
-Inheritance → A sports car inherits features from a general car.
-Polymorphism → A "drive" function works differently for a manual and automatic car.
+Think of OOP as a car factory:  
+Class → The blueprint of a car.  
+Object → A specific car made from the blueprint.  
+Encapsulation → The engine is hidden inside the hood (private data).  
+Inheritance → A sports car inherits features from a general car.  
+Polymorphism → A "drive" function works differently for a manual and automatic car.  
 
 The basic concepts of OOP covered are follow as:
 - Virtual & Pure Virtual functons(Abstract Classes)
