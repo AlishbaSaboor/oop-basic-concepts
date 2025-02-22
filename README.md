@@ -27,26 +27,20 @@ Object-Oriented Programming (OOP) is a programming paradigm that uses objects to
 #include <iostream>
 using namespace std;
 
-// Class definition
 class Car {
 public:
     string brand;
-    
-    // Constructor
     Car(string b) {
         brand = b;
     }
-
-    // Method
     void showBrand() {
         cout << "Car brand: " << brand << endl;
     }
 };
 
 int main() {
-    Car myCar("Toyota"); // Creating an object
-    myCar.showBrand();   // Calling a method
-
+    Car myCar("Toyota");
+    myCar.showBrand();
     return 0;
 }
 ```
@@ -60,13 +54,14 @@ Inheritance → A sports car inherits features from a general car.
 Polymorphism → A "drive" function works differently for a manual and automatic car.  
 
 ## Virtual & Pure Virtual functions
-<h3>>Virtual Functions:</h3> 
+<h3>Virtual Functions:</h3> 
 A virtual function is a function in a base class that you can override in a derived class. When calling a virtual function through a base class pointer, the derived class version is executed.  
 
 **Key Points:**  
 - Declared using the virtual keyword in the base class.
 - Ensures correct function execution in an inheritance hierarchy.
 - Enables runtime polymorphism.  
+
 **Syntax:**
 ```cpp
 virtual void print();
@@ -77,7 +72,7 @@ A pure virtual function is a function that has no implementation in the base cla
 
 **Syntax:**
 ```cpp
-virtual void show() = 0; // Pure virtual function
+virtual void show() = 0;
 ```
 
 **Real-world example:**  
@@ -86,14 +81,14 @@ Think of a "Shape" class where different shapes (circle, square, triangle) must 
 ## Virtual Classes
 A virtual base class is used to prevent duplicate instances of a base class when using multiple inheritances.
 
-Key Points:
+**Key Points:**
 
-Declared using the virtual keyword in the base class.
+- Declared using the virtual keyword in the base class.
 
-Helps solve the diamond problem in multiple inheritance.
+- Helps solve the diamond problem in multiple inheritance.
 
-Syntax:
-
+**Syntax:**
+```cpp
 class A {
     // Base class
 };
@@ -106,39 +101,47 @@ class C : virtual public A {
 class D : public B, public C {
     // Avoids duplicate A
 };
+```
 
-Real-world example: Think of a grandfather (A), who has two children father (B) and uncle (C). The grandson (D) should inherit the grandfather only once, not twice.
+**Real-world example:**
+
+Think of a grandfather (A), who has two children father (B) and uncle (C). The grandson (D) should inherit the grandfather only once, not twice.
 
 ## Friend Function
-Friend Function:
-
 A function that is not a member of a class but can access its private and protected members.
 
-Key Points:
+**Key Points:**
 
-Declared using the friend keyword inside the class.
+- Declared using the friend keyword inside the class.
 
-Helps access private members from outside the class.
+- Helps access private members from outside the class.
 
-Syntax:
+**Syntax:**
 
+```cpp
 class A {
     private:
         int value;
     public:
         friend void show(A obj); // Friend function declaration
 };
+```
 
 ## Friend Class
 A class that has access to the private and protected members of another class.
 
-Syntax:
+**Syntax:**
 
+```cpp
 class A {
     friend class B; // B is a friend of A
 };
+```
 
-Real-world example: Think of a bank account class. A separate audit class may need to access the private balance for verification purposes.
+**Real-world example:**
+
+Think of a bank account class. A separate audit class may need to access the private balance for verification purposes.
+
 ## Operator Overloading
 Operator overloading allows operators (like +, -, *) to be used with objects of a class.
 
